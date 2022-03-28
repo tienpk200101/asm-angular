@@ -1,0 +1,25 @@
+<div class="container-fluid">
+    <h2 class="d-flex justify-content-center">Danh Sách Sinh Viên</h2>
+    <button class="btn btn-success sm-6"><a [routerLink]="'add'" class="text-light">Thêm Sinh Viên</a></button><br>
+    <table class="table table-stripped">
+        <thead>
+            <th>Id</th>
+            <th>Họ Tên</th>
+            <th>Email</th>
+            <th>Ngày Sinh</th>
+            <th>Giới tính</th>
+            <th><input type="text" class="form-control" (keyup)="search($event)" placeholder="Tìm kiếm"></th>
+        </thead>
+        <tbody *ngFor="let st of students">
+            <td>{{st.id}}</td>
+            <td>{{st.fullname}}</td>
+            <td>{{st.email}}</td>
+            <td>{{st.birthday}}</td>
+            <td>{{gender(st.gender)}}</td>
+            <td class="d-flex justify-content-center">
+                <a [routerLink]="'edit/' + st.id" class="btn btn-primary">Sửa</a>
+                <a  class="btn btn-danger text-light ml-2">Xóa</a>
+            </td>
+        </tbody>
+    </table>
+</div>

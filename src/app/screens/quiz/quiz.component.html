@@ -1,0 +1,8 @@
+<div class="container">
+    <form *ngFor="let q of quizs">
+        <label for="">{{q.Text}}</label>
+        <div *ngFor="let ans of q.Answers">
+            <input type="radio" > {{ans.Text}}
+        </div>
+    </form>
+</div>

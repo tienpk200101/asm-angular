@@ -1,0 +1,23 @@
+<div class="container-fluid">
+    <h2 class="d-flex justify-content-center">Danh Sách Môn Học</h2>
+    <button class="btn btn-success sm-6"><a [routerLink]="'add'">Thêm Môn Học</a></button>
+    <table class="table table-stripped">
+        <thead>
+            <th>Id</th>
+            <th>Code</th>
+            <th>Tên</th>
+            <th>Logo</th>
+            <th class="col"><input type="text" (keyup)="search($event)" class="form-control" placeholder="Tìm kiếm"></th>
+        </thead>
+        <tbody *ngFor="let s of subjects">
+            <td>{{s.id}}</td>
+            <td>{{s.Code}}</td>
+            <td>{{s.Name}}</td>
+            <td>{{s.Logo}}</td>
+            <td class="d-flex justify-content-center">
+                <a [routerLink]="'edit/' + s.id" class="btn btn-primary text-light">Sửa</a>
+                <a class="btn btn-danger text-light ml-2">Xóa</a>
+            </td>
+        </tbody>
+    </table>
+</div>

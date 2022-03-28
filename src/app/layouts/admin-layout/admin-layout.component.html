@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
+    .navbar {
+      margin-bottom: 50px;
+      border-radius: 0;
+    }
+    
+    /* Remove the jumbotron's default bottom margin */ 
+     .jumbotron {
+      margin-bottom: 0;
+    }
+   
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="jumbotron">
+  <div class="container text-center">
+    <img src="https://caodang.fpt.edu.vn/wp-content/uploads/18198154_10208600482868814_3469513_n.png" width="50" alt="">
+    <h1><a [routerLink]="'admin/'">Dashboard</a></h1>
+  </div>
+</div>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link active" [routerLink]="'mon-hoc'">Môn Học</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" [routerLink]="'sinh-vien'">Sinh Viên</a>
+          </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">    
+  <router-outlet></router-outlet>
+</div>
+
+<footer class="container-fluid text-center">
+  
+</footer>
+
+</body>
+</html>
